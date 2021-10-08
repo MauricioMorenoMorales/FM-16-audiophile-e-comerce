@@ -1,8 +1,18 @@
 import styled from 'styled-components';
+import { colorSystem } from '../../global/designSystem';
 
 interface fontProps {
-	size: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'overline' | 'subtitle' | 'p';
-	color?: 'light' | 'dark' | 'accent';
+	size?:
+		| 'h1'
+		| 'h2'
+		| 'h3'
+		| 'h4'
+		| 'h5'
+		| 'h6'
+		| 'overline'
+		| 'subtitle'
+		| 'p';
+	color?: keyof typeof colorSystem;
 }
 
 const fontSize = {
@@ -53,10 +63,11 @@ const letterSpacing = {
 };
 
 const Text = styled.p<fontProps>`
-	font-size: ${props => fontSize[props.size]};
-	font-weight: ${props => fontWeight[props.size]};
-	line-height: ${props => lineHeight[props.size]};
-	letter-spacing: ${props => letterSpacing[props.size]};
+	font-size: ${props => fontSize[props.size || 'p']};
+	font-weight: ${props => fontWeight[props.size || 'p']};
+	line-height: ${props => lineHeight[props.size || 'p']};
+	letter-spacing: ${props => letterSpacing[props.size || 'p']};
+	color: ${props => colorSystem[props.color || 'baseSecondarySaturated']};
 `;
 
 export default Text;

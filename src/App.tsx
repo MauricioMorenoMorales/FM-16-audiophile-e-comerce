@@ -3,7 +3,9 @@ import Text from './components/atoms/Text';
 const App = () => {
 	return (
 		<div>
-			<Text size="h1">Morbis Interdum</Text>
+			<Text size="h1" color="accent">
+				Morbis Interdum
+			</Text>
 			<Text size="h1">Mollis Sapien</Text>
 			<Text size="h2">Morbis Interdum</Text>
 			<Text size="h2">Mollis Sapien</Text>
@@ -19,7 +21,7 @@ const App = () => {
 			<Text size="overline">Mollis Sapien</Text>
 			<Text size="subtitle">Morbis Interdum</Text>
 			<Text size="subtitle">Mollis Sapien</Text>
-			<Text size="p">
+			<Text>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque omnis
 				quas magnam, voluptatum exercitationem velit ipsa autem at ullam
 				deserunt nulla sed amet tempora similique, a fugit. Eum assumenda non
