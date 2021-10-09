@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { colorSystem } from '../../global/designSystem';
+import { colorSystem, fontSystem } from '../../../global/designSystem';
 
-interface fontProps {
+export interface textProps {
 	size?:
 		| 'h1'
 		| 'h2'
@@ -62,12 +62,13 @@ const letterSpacing = {
 	p: '1px',
 };
 
-const Text = styled.p<fontProps>`
+const Text = styled.p<textProps>`
 	font-size: ${props => fontSize[props.size || 'p']};
 	font-weight: ${props => fontWeight[props.size || 'p']};
 	line-height: ${props => lineHeight[props.size || 'p']};
 	letter-spacing: ${props => letterSpacing[props.size || 'p']};
 	color: ${props => colorSystem[props.color || 'baseSecondarySaturated']};
+	font-family: ${fontSystem.fontFamily};
 `;
 
 export default Text;

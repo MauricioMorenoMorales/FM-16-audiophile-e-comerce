@@ -8,4 +8,8 @@ export const colorSystem = {
 	accent: '#d87d4a',
 };
 
-export const spacingSystem = {}
+export const spacingSystem = {};
+
+export const fontSystem = {
+	fontFamily: "'Manrope', sans-serif",
+};

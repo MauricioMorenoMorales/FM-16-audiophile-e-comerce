@@ -1,4 +1,4 @@
-import Text from './components/atoms/Text';
+import { Text } from './components/atoms';
 
 const App = () => {
 	return (
