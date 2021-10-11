@@ -1,7 +1,11 @@
 import styled from 'styled-components';
-import { colorSystem, fontSystem } from '../../../global/designSystem';
+import {
+	colorSystem,
+	fontSystem,
+	heightSystem,
+} from '../../../global/designSystem';
 
-interface ButtonProps {
+export interface ButtonProps {
 	kind?: 'primary' | 'secondary';
 	fullWidth?: boolean;
 }
@@ -33,7 +37,7 @@ const Button = styled.button<ButtonProps>`
 	background-color: ${props => background[props.kind || 'primary']};
 	color: ${({ kind }) => textColor[kind || 'primary']};
 	border: 1px solid ${({ kind }) => border[kind || 'primary']};
-	height: 48px;
+	height: ${heightSystem.big}px;
 	padding: 15px 30px;
 	font-size: 1.3rem;
 	font-weight: ${fontSystem.fontWeightBold};

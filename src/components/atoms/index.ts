@@ -1,3 +1,3 @@
 export { default as Text } from './Text/Text';
-export { default as Button } from './Button/Button';
-export { default as GhostButton } from './Button/GhostButton';
+export { default as Button } from './Buttons/Button';
+export { default as GhostButton } from './Buttons/GhostButton';

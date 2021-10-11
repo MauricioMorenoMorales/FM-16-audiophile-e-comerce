@@ -2,6 +2,7 @@ export const colorSystem = {
 	basePrimary: '#fafafa',
 	basePrimaryDesaturated: '#f1f1f1',
 	basePrimarySaturated: '#fff',
+	baseSecondaryDesaturated: '#979797',
 	baseSecondarySaturated: '#000',
 	baseSecondary: '#101010',
 	accentDesaturated: '#fbaf85',
@@ -13,4 +14,8 @@ export const spacingSystem = {};
 export const fontSystem = {
 	fontFamily: "'Manrope', sans-serif",
 	fontWeightBold: 700,
+};
+
+export const heightSystem = {
+	big: 48,
 };
