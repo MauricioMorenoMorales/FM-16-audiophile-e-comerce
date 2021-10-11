@@ -12,4 +12,5 @@ export const spacingSystem = {};
 
 export const fontSystem = {
 	fontFamily: "'Manrope', sans-serif",
+	fontWeightBold: 700,
 };

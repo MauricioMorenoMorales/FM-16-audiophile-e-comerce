@@ -1,8 +1,12 @@
-import { Text } from './components/atoms';
+import { Text, Button, GhostButton } from './components/atoms';
 
 const App = () => {
 	return (
 		<div>
+			<Button>Testing this</Button>
+			<Button kind="secondary">Testing this</Button>
+			<Button kind="primary">Testing this</Button>
+			<GhostButton>Testing button</GhostButton>
 			<Text size="h1" color="accent">
 				Morbis Interdum
 			</Text>
