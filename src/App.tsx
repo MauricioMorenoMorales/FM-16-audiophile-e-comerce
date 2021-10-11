@@ -3,9 +3,12 @@ import { Text, Button, GhostButton } from './components/atoms';
 const App = () => {
 	return (
 		<div>
-			<Button>Testing this</Button>
-			<Button kind="secondary">Testing this</Button>
+			<Button>see product</Button>
+			<Button kind="secondary">see product</Button>
 			<Button kind="primary">Testing this</Button>
+			<Button kind="secondary" fullWidth>
+				see product
+			</Button>
 			<GhostButton>Testing button</GhostButton>
 			<Text size="h1" color="accent">
 				Morbis Interdum
