@@ -9,8 +9,17 @@ const App = () => {
 			<Button kind="secondary" fullWidth>
 				see product
 			</Button>
-			<Input />
-			<Input title="Name" placeholder="This is a placeholder in props" />
+			<Input
+				title="Name"
+				placeholder="This is a placeholder in props"
+				type="text"
+			/>
+			<Input title="Email" placeholder="Insert your email" type="email" />
+			<Input
+				title="Password"
+				placeholder="Insert your password"
+				type="password"
+			/>
 			<GhostButton>Testing button</GhostButton>
 			<Text size="h1" color="accent">
 				Morbis Interdum

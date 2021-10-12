@@ -28,6 +28,11 @@ const InputStyles = styled.div`
 		border-radius: ${borderSystem.small}px;
 		border: 1px solid ${colorSystem.baseSecondaryDesaturated};
 	}
+	& > .input--error {
+		border: 1px solid ${colorSystem.error};
+		color: ${colorSystem.error};
+		outline: 1px solid ${colorSystem.error};
+	}
 `;
 
 export default InputStyles;
