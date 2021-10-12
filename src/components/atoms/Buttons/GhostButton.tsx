@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import Arrow from './button-arrow.svg';
-import {
-	colorSystem,
-	fontSystem,
-	heightSystem,
-} from '../../../global/designSystem';
-
-import { Text } from '../index';
+import { colorSystem, fontSystem } from '../../../global/designSystem';
 
 const GhostButton: React.FC = ({ children }) => {
 	const Container = styled.div`
@@ -35,7 +29,7 @@ const GhostButton: React.FC = ({ children }) => {
 	`;
 	return (
 		<Container>
-			<p>{children}</p>
+			<p data-testid="text">{children}</p>
 			<img src={Arrow} alt="" />
 		</Container>
 	);
