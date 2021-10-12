@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import { Text } from '..';
 import Styles from './Input.styles';
 
-const Input: React.FC<{
+export interface ComponentProps {
 	title?: string;
 	placeholder?: string;
 	type?: 'text' | 'password' | 'email';
-}> = ({ title, placeholder = '', type = 'text' }) => {
+}
+
+const Input: React.FC<ComponentProps> = ({
+	title,
+	placeholder = '',
+	type = 'text',
+}) => {
 	const [formatError, setFormatError] = useState<boolean>(false);
 
 	const validatingFormats = {
@@ -28,7 +34,7 @@ const Input: React.FC<{
 		<Styles>
 			<div className="input__header">
 				{title && (
-					<Text className="title" size="subtitle">
+					<Text className="title" size="subtitle" data-testid="title">
 						{title}
 					</Text>
 				)}
@@ -37,6 +43,7 @@ const Input: React.FC<{
 						size="subtitle"
 						color="error"
 						className="input__header__format-error"
+						data-testid="error-message"
 					>
 						Wrong Format
 					</Text>
@@ -44,6 +51,7 @@ const Input: React.FC<{
 			</div>
 			<input
 				type={type}
+				data-testid="input"
 				placeholder={placeholder}
 				className={formatError ? 'input--error' : ''}
 				onChange={formatValidator}
