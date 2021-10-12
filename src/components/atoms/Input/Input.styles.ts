@@ -27,6 +27,10 @@ const InputStyles = styled.div`
 		font-family: ${fontSystem.fontFamily};
 		border-radius: ${borderSystem.small}px;
 		border: 1px solid ${colorSystem.baseSecondaryDesaturated};
+		&:focus {
+			border: ${colorSystem.accent};
+			outline: 1px solid ${colorSystem.accent};
+		}
 	}
 	& > .input--error {
 		border: 1px solid ${colorSystem.error};
