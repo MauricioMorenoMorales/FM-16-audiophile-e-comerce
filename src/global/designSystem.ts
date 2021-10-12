@@ -7,6 +7,7 @@ export const colorSystem = {
 	baseSecondary: '#101010',
 	accentDesaturated: '#fbaf85',
 	accent: '#d87d4a',
+	error: '#cd2c2c',
 };
 
 export const spacingSystem = {};
@@ -14,6 +15,10 @@ export const spacingSystem = {};
 export const fontSystem = {
 	fontFamily: "'Manrope', sans-serif",
 	fontWeightBold: 700,
+};
+
+export const borderSystem = {
+	small: 8,
 };
 
 export const heightSystem = {

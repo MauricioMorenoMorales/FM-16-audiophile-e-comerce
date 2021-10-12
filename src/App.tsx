@@ -1,4 +1,4 @@
-import { Text, Button, GhostButton } from './components/atoms';
+import { Text, Button, GhostButton, Input } from './components/atoms';
 
 const App = () => {
 	return (
@@ -9,6 +9,8 @@ const App = () => {
 			<Button kind="secondary" fullWidth>
 				see product
 			</Button>
+			<Input />
+			<Input title="Name" placeholder="This is a placeholder in props" />
 			<GhostButton>Testing button</GhostButton>
 			<Text size="h1" color="accent">
 				Morbis Interdum
