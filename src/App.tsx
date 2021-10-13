@@ -1,4 +1,11 @@
-import { Text, Button, GhostButton, Input, Radio } from './components/atoms';
+import {
+	Text,
+	Button,
+	GhostButton,
+	Input,
+	Radio,
+	Counter,
+} from './components/atoms';
 
 const App = () => {
 	return (
@@ -9,6 +16,7 @@ const App = () => {
 			<Button kind="secondary" fullWidth>
 				see product
 			</Button>
+			<Counter />
 			<Radio active={true} label="This is a radio" />
 			<Input
 				title="Name"
