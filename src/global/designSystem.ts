@@ -10,7 +10,10 @@ export const colorSystem = {
 	error: '#cd2c2c',
 };
 
-export const spacingSystem = {};
+export const spacingSystem = {
+	medium: 24,
+	verySmall: 5,
+};
 
 export const fontSystem = {
 	fontFamily: "'Manrope', sans-serif",
@@ -23,4 +26,5 @@ export const borderSystem = {
 
 export const heightSystem = {
 	big: 48,
+	extraBig: 58,
 };

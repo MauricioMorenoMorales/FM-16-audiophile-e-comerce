@@ -1,4 +1,4 @@
-import { Text, Button, GhostButton, Input } from './components/atoms';
+import { Text, Button, GhostButton, Input, Radio } from './components/atoms';
 
 const App = () => {
 	return (
@@ -9,6 +9,7 @@ const App = () => {
 			<Button kind="secondary" fullWidth>
 				see product
 			</Button>
+			<Radio active={true} label="This is a radio" />
 			<Input
 				title="Name"
 				placeholder="This is a placeholder in props"

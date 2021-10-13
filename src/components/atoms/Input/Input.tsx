@@ -21,6 +21,8 @@ const Input: React.FC<ComponentProps> = ({
 		password: /./gi,
 	};
 
+	//TODO Realice the function who passes the value to the parent of this element
+
 	const formatValidator: React.ChangeEventHandler = event => {
 		const eventValue = (event.currentTarget as HTMLInputElement).value;
 		if (validatingFormats[type].test(eventValue)) {
