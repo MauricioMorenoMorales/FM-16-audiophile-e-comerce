@@ -44,6 +44,9 @@ const Button = styled.button<ButtonProps>`
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: 0.3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	&:hover {
 		background-color: ${({ kind }) => backgroundHover[kind || 'primary']};
 		color: ${({ kind }) => textColorHover[kind || 'primary']};

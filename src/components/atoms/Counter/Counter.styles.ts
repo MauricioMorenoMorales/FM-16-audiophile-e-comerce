@@ -11,6 +11,7 @@ const Styles = styled.div`
 	display: grid;
 	grid-template-columns: 33% 34% 33%;
 	background-color: ${colorSystem.basePrimaryDesaturated};
+	overflow: hidden;
 	& > p {
 		font-family: ${fontSystem.fontFamily};
 		display: flex;
@@ -18,6 +19,7 @@ const Styles = styled.div`
 		align-items: center;
 		color: ${colorSystem.baseSecondarySaturated};
 		font-weight: ${fontSystem.fontWeightBold};
+		background-color: ${colorSystem.basePrimaryDesaturated};
 	}
 	& > button {
 		background-color: ${colorSystem.basePrimaryDesaturated};
@@ -25,6 +27,7 @@ const Styles = styled.div`
 		font-size: 1.3rem;
 		color: ${colorSystem.baseSecondaryDesaturated};
 		cursor: pointer;
+		border: none;
 		&:hover {
 			color: ${colorSystem.accent};
 		}
