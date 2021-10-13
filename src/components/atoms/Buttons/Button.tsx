@@ -33,7 +33,7 @@ const border = {
 
 const Button = styled.button<ButtonProps>`
 	width: ${({ fullWidth }) => fullWidth && '100%'};
-	display: ${({ fullWidth }) => (fullWidth ? 'block' : 'inline')};
+	display: ${({ fullWidth }) => (fullWidth ? 'flex' : 'inline-flex')};
 	background-color: ${props => background[props.kind || 'primary']};
 	color: ${({ kind }) => textColor[kind || 'primary']};
 	border: 1px solid ${({ kind }) => border[kind || 'primary']};
@@ -44,7 +44,7 @@ const Button = styled.button<ButtonProps>`
 	text-transform: uppercase;
 	cursor: pointer;
 	transition: 0.3s;
-	display: flex;
+	display: inline;
 	align-items: center;
 	justify-content: center;
 	&:hover {

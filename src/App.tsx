@@ -6,10 +6,12 @@ import {
 	Radio,
 	Counter,
 } from './components/atoms';
+import { Header } from './components';
 
 const App = () => {
 	return (
 		<div>
+			<Header />
 			<Button>see product</Button>
 			<Button kind="secondary">see product</Button>
 			<Button kind="primary">Testing this</Button>

@@ -27,4 +27,5 @@ export const borderSystem = {
 export const heightSystem = {
 	big: 48,
 	extraBig: 58,
+	jumbo: 90,
 };
