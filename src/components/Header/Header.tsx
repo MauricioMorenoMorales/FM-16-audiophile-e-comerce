@@ -4,7 +4,7 @@ import Logo from '../../assets/shared/desktop/logo.svg';
 import Cart from '../../assets/shared/desktop/icon-cart.svg';
 import Styles from './Header.styles';
 
-const Header = () => {
+const Header: React.FC = () => {
 	return (
 		<Styles>
 			<div className="header">
@@ -18,6 +18,7 @@ const Header = () => {
 				</section>
 				<div className="header__cart">
 					<img className="header__cart__image" src={Cart} alt="" />
+					{/* TODO add a dynamic value to the counter */}
 					<div className="header__cart__counter">2</div>
 				</div>
 			</div>
