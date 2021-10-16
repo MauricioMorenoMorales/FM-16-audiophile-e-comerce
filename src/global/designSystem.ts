@@ -8,6 +8,7 @@ export const colorSystem = {
 	accentDesaturated: '#fbaf85',
 	accent: '#d87d4a',
 	error: '#cd2c2c',
+	modalBackground: '#00000099',
 };
 
 export const spacingSystem = {
