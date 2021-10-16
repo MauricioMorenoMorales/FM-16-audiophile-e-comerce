@@ -45,7 +45,6 @@ const App = () => {
 			<Text size="h5">Morbis Interdum</Text>
 			<Text size="h5">Mollis Sapien</Text>
 			<Text size="h6">Morbis Interdum</Text>
-			<Text size="h6">Mollis Sapien</Text>
 			<Text size="overline">Morbis Interdum</Text>
 			<Text size="overline">Mollis Sapien</Text>
 			<Text size="subtitle">Morbis Interdum</Text>
