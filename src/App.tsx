@@ -6,7 +6,12 @@ import {
 	Radio,
 	Counter,
 } from './components/atoms';
-import { Header, Footer, FooterCompanyDescription } from './components';
+import {
+	Header,
+	Footer,
+	FooterCompanyDescription,
+	SectionLinks,
+} from './components';
 
 const App = () => {
 	return (
@@ -63,6 +68,7 @@ const App = () => {
 				sequi laboriosam.
 			</Text>
 			<p>Testing app</p>
+			<SectionLinks />
 			<FooterCompanyDescription />
 			<Footer />
 		</div>
