@@ -6,6 +6,7 @@ import Logo from '../../assets/shared/desktop/logo.svg';
 const Footer: React.FC = () => {
 	return (
 		<Styles>
+			<div className="footer-line"></div>
 			<div className="footer">
 				<figure className="footer__logo">
 					<img src={Logo} alt="audiophile" />
@@ -25,7 +26,7 @@ const Footer: React.FC = () => {
 					</a>
 				</section>
 				<section className="footer__description">
-					<Text color="basePrimaryDesaturated">
+					<Text color="baseSecondaryDesaturated">
 						Audiophile is an all in one stop to fulfill your audio needs. We're
 						a small team of music lovers and sound specialists who are devoted
 						to helping you get the most out of personal audio. Come and visit
@@ -33,14 +34,14 @@ const Footer: React.FC = () => {
 					</Text>
 				</section>
 				<section className="footer__copyright">
-					<Text color="basePrimaryDesaturated">
+					<Text color="baseSecondaryDesaturated">
 						Copyright 2021. All Rights Reserved
 					</Text>
 				</section>
-				<section className="footer__links">
-					<Icon iconName="facebook" color="baseSecondarySaturated" />
-					<Icon iconName="twitter" color="baseSecondarySaturated" />
-					<Icon iconName="instagram" color="baseSecondarySaturated" />
+				<section className="footer__social">
+					<Icon iconName="facebook" />
+					<Icon iconName="twitter" />
+					<Icon iconName="instagram" />
 				</section>
 			</div>
 		</Styles>
