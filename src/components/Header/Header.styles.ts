@@ -44,7 +44,7 @@ const Styles = styled.header`
 		position: absolute;
 		z-index: 100;
 		background-color: ${colorSystem.basePrimarySaturated};
-		background-color: 0 0 ${borderSystem.small}px ${borderSystem.small}px;
+		border-radius: 0 0 ${borderSystem.small}px ${borderSystem.small}px;
 		width: 100%;
 		&__item {
 			background-color: ${colorSystem.basePrimaryDesaturated};
