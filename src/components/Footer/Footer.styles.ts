@@ -53,6 +53,51 @@ const Styles = styled.footer`
 			margin-bottom: 40px;
 			margin-left: 30px;
 		}
+		.footer {
+			display: grid;
+			grid-template-columns: 50% 50%;
+			grid-template-areas:
+				'logo logo'
+				'links links'
+				'description description'
+				'copyright social';
+			&__logo {
+				grid-area: logo;
+			}
+			&__links {
+				grid-area: links;
+				flex-direction: row;
+				&__item {
+					margin-right: 34px;
+				}
+			}
+			&__description {
+				grid-area: description;
+			}
+			&__copyright {
+				grid-area: copyright;
+			}
+			&__social {
+				grid-area: social;
+				margin: 0;
+				margin-left: auto;
+			}
+		}
+		@media screen and (min-width: 1100px) {
+			.footer {
+				grid-template-areas: 'logo links' 'description social' 'copyright copyright';
+				max-width: 1100px;
+				margin: 0 auto;
+				&__links {
+					margin: 0;
+					margin-left: auto;
+					&__item {
+						margin: 0;
+						margin-left: 34px;
+					}
+				}
+			}
+		}
 	}
 `;
 
