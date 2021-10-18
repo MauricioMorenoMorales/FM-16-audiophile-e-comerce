@@ -6,7 +6,7 @@ import {
 	Radio,
 	Counter,
 } from './components/atoms';
-import { Header, Footer } from './components';
+import { Header, Footer, FooterCompanyDescription } from './components';
 
 const App = () => {
 	return (
@@ -63,6 +63,7 @@ const App = () => {
 				sequi laboriosam.
 			</Text>
 			<p>Testing app</p>
+			<FooterCompanyDescription />
 			<Footer />
 		</div>
 	);
