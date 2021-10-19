@@ -25,7 +25,7 @@ const InputStyles = styled.div`
 		width: 100%;
 		padding-left: 24px;
 		font-family: ${fontSystem.fontFamily};
-		border-radius: ${borderSystem.small}px;
+		border-radius: ${borderSystem.small};
 		border: 1px solid ${colorSystem.baseSecondaryDesaturated};
 		&:focus {
 			border: ${colorSystem.accent};

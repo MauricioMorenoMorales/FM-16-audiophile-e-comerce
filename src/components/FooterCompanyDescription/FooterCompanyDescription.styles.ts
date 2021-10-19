@@ -8,7 +8,7 @@ const Styles = styled.div`
 		&__image > img {
 			width: 100%;
 			margin-bottom: 40px;
-			border-radius: ${borderSystem.small}px;
+			border-radius: ${borderSystem.small};
 		}
 		&__text {
 			max-width: 600px;

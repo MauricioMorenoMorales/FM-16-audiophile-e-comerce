@@ -9,7 +9,7 @@ import {
 const Styles = styled.div`
 	display: flex;
 	border: 1px solid ${colorSystem.baseSecondaryDesaturated};
-	border-radius: ${borderSystem.small}px;
+	border-radius: ${borderSystem.small};
 	height: ${heightSystem.extraBig}px;
 	display: flex;
 	align-items: center;

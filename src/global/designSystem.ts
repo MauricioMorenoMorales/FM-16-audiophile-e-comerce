@@ -22,7 +22,7 @@ export const fontSystem = {
 };
 
 export const borderSystem = {
-	small: 8,
+	small: '8px',
 };
 
 export const heightSystem = {

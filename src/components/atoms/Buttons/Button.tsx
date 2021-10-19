@@ -6,29 +6,34 @@ import {
 } from '../../../global/designSystem';
 
 export interface ButtonProps {
-	kind?: 'primary' | 'secondary';
+	kind?: 'primary' | 'secondary' | 'tertiary';
 	fullWidth?: boolean;
 }
 
 const background = {
 	primary: colorSystem.accent,
-	secondary: colorSystem.basePrimarySaturated,
+	secondary: 'transparent',
+	tertiary: colorSystem.baseSecondarySaturated,
 };
 const backgroundHover = {
 	primary: colorSystem.accentDesaturated,
 	secondary: colorSystem.baseSecondarySaturated,
+	tertiary: 'transparent',
 };
 const textColor = {
 	primary: colorSystem.basePrimarySaturated,
 	secondary: colorSystem.baseSecondarySaturated,
+	tertiary: colorSystem.basePrimarySaturated,
 };
 const textColorHover = {
 	primary: colorSystem.basePrimarySaturated,
 	secondary: colorSystem.basePrimarySaturated,
+	tertiary: colorSystem.baseSecondarySaturated,
 };
 const border = {
 	primary: colorSystem.accentDesaturated,
 	secondary: colorSystem.baseSecondarySaturated,
+	tertiary: colorSystem.baseSecondarySaturated,
 };
 
 const Button = styled.button<ButtonProps>`

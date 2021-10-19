@@ -5,7 +5,7 @@ const Styles = styled.div`
 	.section-links {
 		padding: 24px 0;
 		background-color: ${colorSystem.basePrimarySaturated};
-		border-radius: 0 0 ${borderSystem.small}px ${borderSystem.small}px;
+		border-radius: 0 0 ${borderSystem.small} ${borderSystem.small};
 		width: 100%;
 		&__item {
 			background-color: ${colorSystem.basePrimaryDesaturated};
@@ -13,7 +13,7 @@ const Styles = styled.div`
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			border-radius: ${borderSystem.small}px;
+			border-radius: ${borderSystem.small};
 			&__image {
 				width: 120px;
 				height: auto;
