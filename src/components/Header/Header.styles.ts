@@ -82,7 +82,7 @@ const Styles = styled.header`
 		background-color: ${colorSystem.baseSecondary};
 		.header {
 			width: 100%;
-			max-width: 1050px;
+			max-width: 1300px;
 			border-bottom: 1px solid ${colorSystem.baseSecondaryDesaturated};
 			display: flex;
 			justify-content: space-between;

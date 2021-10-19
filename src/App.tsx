@@ -11,12 +11,14 @@ import {
 	Footer,
 	FooterCompanyDescription,
 	SectionLinks,
+	Hero,
 } from './components';
 
 const App = () => {
 	return (
 		<div>
 			<Header />
+			<Hero />
 			<Button>see product</Button>
 			<Button kind="secondary">see product</Button>
 			<Button kind="primary">Testing this</Button>
