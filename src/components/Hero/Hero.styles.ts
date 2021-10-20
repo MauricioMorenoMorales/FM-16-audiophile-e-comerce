@@ -24,7 +24,6 @@ const Styles = styled.div`
 			&__title {
 				margin: 0 auto;
 				margin-top: 16px;
-				font-size: 3.6rem;
 				max-width: 400px;
 			}
 			&__paragraph {
@@ -46,9 +45,6 @@ const Styles = styled.div`
 				height: 750px;
 				&__label {
 					margin-top: 200px;
-				}
-				&__title {
-					font-size: 5.6rem;
 				}
 			}
 		}

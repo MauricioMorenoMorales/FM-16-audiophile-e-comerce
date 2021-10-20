@@ -69,6 +69,10 @@ const Text = styled.p<textProps>`
 	letter-spacing: ${props => letterSpacing[props.size || 'p']};
 	color: ${props => colorSystem[props.color || 'baseSecondarySaturated']};
 	font-family: ${fontSystem.fontFamily};
+	@media screen and (max-width: 768px) {
+		font-size: ${props =>
+			props.size === 'h1' ? '3.6rem' : fontSize[props.size || 'p']};
+	}
 `;
 
 export default Text;
