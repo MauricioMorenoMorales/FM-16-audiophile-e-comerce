@@ -70,7 +70,7 @@ const Home = () => {
 						</div>
 					</article>
 					<article className="home__products__third-item--image">
-						<picture>
+						<picture className="home__products__third-item--image__image">
 							<source
 								media="screen and (min-width: 1100px)"
 								srcSet={thirdProductDesktop}

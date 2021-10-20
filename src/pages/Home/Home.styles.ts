@@ -6,7 +6,11 @@ import SpeakerBackgroundTablet from '../../assets/home/tablet/image-speaker-zx7.
 import SpeakerBackgroundDesktop from '../../assets/home/desktop/image-speaker-zx7.jpg';
 
 const Styles = styled.div`
+	.home__section-links {
+		margin-top: 120px;
+	}
 	.home__products {
+		margin: 120px 0;
 		&__first-item {
 			background-color: ${colorSystem.accent};
 			display: flex;
@@ -113,6 +117,39 @@ const Styles = styled.div`
 					height: 320px;
 					margin-left: 12px;
 					padding-left: 60px;
+				}
+			}
+		}
+	}
+	@media screen and (min-width: 1100px) {
+		.home__products {
+			&__first-item {
+				display: grid;
+				grid-template-columns: 1fr 450px;
+				overflow: hidden;
+				text-align: start;
+				background-position-x: -220px;
+				&__image > img {
+					width: 400px;
+					max-width: 400px;
+					margin-top: 100px;
+				}
+				&__text {
+					&__title {
+						max-width: 300px;
+					}
+					&__paragraph {
+						max-width: 350px;
+					}
+				}
+			}
+			&__second-item {
+				background-image: url(${SpeakerBackgroundDesktop});
+			}
+			&__third-item {
+				&--image__image > img {
+					width: 100%;
+					height: 320px;
 				}
 			}
 		}

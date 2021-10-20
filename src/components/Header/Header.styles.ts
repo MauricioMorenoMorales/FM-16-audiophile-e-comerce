@@ -12,6 +12,7 @@ const Styles = styled.header`
 		height: ${heightSystem.jumbo}px;
 		background-color: ${colorSystem.baseSecondary};
 		display: grid;
+		max-width: 100vw;
 		grid-template-columns: 70px 1fr 70px;
 		justify-items: center;
 		align-items: center;
@@ -67,8 +68,13 @@ const Styles = styled.header`
 		background-color: ${colorSystem.modalBackground};
 	}
 	@media (min-width: 768px) {
-		.header__logo {
-			justify-self: start;
+		.header {
+			&__logo {
+				justify-self: start;
+			}
+			&__cart {
+				margin-right: 30px;
+			}
 		}
 		.header-menu {
 			display: grid;
@@ -86,6 +92,9 @@ const Styles = styled.header`
 			border-bottom: 1px solid ${colorSystem.baseSecondaryDesaturated};
 			display: flex;
 			justify-content: space-between;
+			&__logo {
+				margin-left: 30px;
+			}
 			&__burger {
 				display: none;
 			}

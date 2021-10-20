@@ -9,7 +9,7 @@ const Styles = styled.div`
 		width: 100%;
 		&__item {
 			background-color: ${colorSystem.basePrimaryDesaturated};
-			margin-top: 45px;
+			margin-top: 120px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
