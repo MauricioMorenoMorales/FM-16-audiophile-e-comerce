@@ -84,6 +84,39 @@ const Styles = styled.div`
 			}
 		}
 	}
+	@media screen and (min-width: 768px) {
+		.home__products {
+			display: grid;
+			grid-template-columns: 50% 50%;
+			grid-template-areas:
+				'first first'
+				'second second'
+				'third-image third';
+			&__first-item {
+				grid-area: first;
+				background-position-y: -230px;
+			}
+			&__second-item {
+				grid-area: second;
+				background-image: url(${SpeakerBackgroundTablet});
+				&__text {
+					margin-left: 60px;
+				}
+			}
+			&__third-item {
+				&--image {
+					grid-area: third-image;
+					height: 320px;
+					margin-right: 12px;
+				}
+				&--description {
+					height: 320px;
+					margin-left: 12px;
+					padding-left: 60px;
+				}
+			}
+		}
+	}
 `;
 
 export default Styles;
