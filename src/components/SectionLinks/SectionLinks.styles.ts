@@ -8,6 +8,7 @@ const Styles = styled.div`
 		border-radius: 0 0 ${borderSystem.small} ${borderSystem.small};
 		width: 100%;
 		&__item {
+			cursor: pointer;
 			background-color: ${colorSystem.basePrimaryDesaturated};
 			margin-top: 120px;
 			display: flex;

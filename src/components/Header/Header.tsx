@@ -31,7 +31,7 @@ const Header: React.FC = () => {
 					src={Hamburger}
 					alt=""
 				/>
-				<img className="header__logo" src={Logo} alt="" />
+				<img className="header__logo" src={Logo} alt="audiophile" />
 				<section className="header__links">
 					<a href="/">Home</a>
 					<a href="/">HeadPhones</a>
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
 					<a href="/">EarPhones</a>
 				</section>
 				<div className="header__cart">
-					<img className="header__cart__image" src={Cart} alt="" />
+					<img className="header__cart__image" src={Cart} alt="cart" />
 					{/* TODO add a dynamic value to the counter */}
 					<div className="header__cart__counter">2</div>
 				</div>
