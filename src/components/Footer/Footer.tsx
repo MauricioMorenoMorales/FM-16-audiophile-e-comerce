@@ -2,6 +2,7 @@ import React from 'react';
 import Styles from './Footer.styles';
 import { Text, Icons as Icon } from '../atoms';
 import Logo from '../../assets/shared/desktop/logo.svg';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
 	return (
@@ -12,18 +13,18 @@ const Footer: React.FC = () => {
 					<img src={Logo} alt="audiophile" />
 				</figure>
 				<section className="footer__links">
-					<a href="/" className="footer__links__item">
+					<Link to="/" className="footer__links__item">
 						Home
-					</a>
-					<a href="/" className="footer__links__item">
+					</Link>
+					<Link to="/category/headphones" className="footer__links__item">
 						Headphones
-					</a>
-					<a href="/" className="footer__links__item">
+					</Link>
+					<Link to="/category/speakers" className="footer__links__item">
 						Speakers
-					</a>
-					<a href="/" className="footer__links__item">
+					</Link>
+					<Link to="/category/earphones" className="footer__links__item">
 						Earphones
-					</a>
+					</Link>
 				</section>
 				<section className="footer__description">
 					<Text color="baseSecondaryDesaturated">
