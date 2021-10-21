@@ -70,7 +70,9 @@ const Category: React.FC = () => {
 								<Text className="category__products__product__text__paragraph">
 									{element.description}
 								</Text>
-								<Button onClick={() => history.push(`/products/${element.id}`)}>
+								<Button
+									onClick={() => history.push(`/products/${element.slug}`)}
+								>
 									SEE PRODUCT
 								</Button>
 							</section>

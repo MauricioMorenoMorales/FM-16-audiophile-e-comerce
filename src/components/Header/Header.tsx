@@ -83,7 +83,12 @@ const Header: React.FC = () => {
 					</div>
 				</section>
 			)}
-			{menuOpened && <div className="modal-background"></div>}
+			{menuOpened && (
+				<div
+					className="modal-background"
+					onClick={() => setMenuOpened(false)}
+				></div>
+			)}
 		</Styles>
 	);
 };

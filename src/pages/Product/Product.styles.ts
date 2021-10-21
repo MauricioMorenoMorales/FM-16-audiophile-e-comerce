@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { colorSystem, fontSystem } from '../../global/designSystem';
+import {
+	borderSystem,
+	colorSystem,
+	fontSystem,
+} from '../../global/designSystem';
 
 const Styles = styled.div`
 	.product {
@@ -53,6 +57,14 @@ const Styles = styled.div`
 				}
 			}
 		}
+		&__gallery {
+			margin-top: 80px;
+			& > * > img {
+				margin-top: 20px;
+				border-radius: ${borderSystem.small};
+				overflow: hidden;
+			}
+		}
 	}
 	@media screen and (min-width: 768px) {
 		.product {
@@ -78,6 +90,28 @@ const Styles = styled.div`
 					&__items {
 						margin-top: 10px;
 					}
+				}
+			}
+			&__gallery {
+				display: grid;
+				grid-template-columns: 40% 60%;
+				gap: 15px;
+				grid-template-areas:
+					'first third'
+					'second third';
+				& > * > img {
+					margin: 0;
+					width: 100%;
+					height: 100%;
+				}
+				&__first {
+					grid-area: first;
+				}
+				&__second {
+					grid-area: second;
+				}
+				&__third {
+					grid-area: third;
 				}
 			}
 		}

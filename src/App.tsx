@@ -13,7 +13,7 @@ const App = () => {
 					path="/category/:categoryName(headphones|earphones|speakers)"
 					component={Category}
 				/>
-				<Route exact path="/products/:productId([1-6])" component={Product} />
+				<Route exact path="/products/:productSlug" component={Product} />
 				<Route path="*" component={Footer} />
 			</Switch>
 			<Footer />

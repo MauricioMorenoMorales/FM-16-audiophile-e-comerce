@@ -1,15 +1,18 @@
 import React from 'react';
 import Styles from './Product.styles';
 import data from '../../data.json';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 
 import { Text, Counter, Button } from '../../components/atoms';
+import { FooterCompanyDescription, SectionLinks } from '../../components';
 
 const Product = () => {
-	const { productId } = useParams<{ productId: string }>();
+	const { productSlug } = useParams<{ productSlug: string }>();
+	const history = useHistory();
 	const product = data.find(
-		element => String(element.id) === String(productId),
+		element => String(element.slug) === String(productSlug),
 	);
+	if (!product) history.push('/');
 	return (
 		<Styles>
 			<div className="body-container">
@@ -67,8 +70,11 @@ const Product = () => {
 								IN THE BOX
 							</Text>
 							<div className="product__description__box__items">
-								{product?.includes.map(element => (
-									<div className="product__description__box__items__item">
+								{product?.includes.map((element, index) => (
+									<div
+										className="product__description__box__items__item"
+										key={index}
+									>
 										<Text
 											className="product__description__box__items__item__quantity"
 											color="accent"
@@ -81,7 +87,68 @@ const Product = () => {
 							</div>
 						</section>
 					</article>
+					<article className="product__gallery">
+						<picture className="product__gallery__first">
+							<source
+								media="screen and (min-width: 1100px)"
+								srcSet={product?.gallery.first.desktop}
+							/>
+							<source
+								media="screen and (min-width: 768px)"
+								srcSet={product?.gallery.first.tablet}
+							/>
+							<img src={product?.gallery.first.mobile} alt={product?.name} />
+						</picture>
+						<picture className="product__gallery__second">
+							<source
+								media="screen and (min-width: 1100px)"
+								srcSet={product?.gallery.second.desktop}
+							/>
+							<source
+								media="screen and (min-width: 768px)"
+								srcSet={product?.gallery.second.tablet}
+							/>
+							<img src={product?.gallery.second.mobile} alt={product?.name} />
+						</picture>
+						<picture className="product__gallery__third">
+							<source
+								media="screen and (min-width: 1100px)"
+								srcSet={product?.gallery.third.desktop}
+							/>
+							<source
+								media="screen and (min-width: 768px)"
+								srcSet={product?.gallery.third.tablet}
+							/>
+							<img src={product?.gallery.third.mobile} alt={product?.name} />
+						</picture>
+					</article>
+					<article className="product__others">
+						<Text size="h5">YOU MAY ALSO LIKE</Text>
+						{product?.others.map((element, index) => (
+							<div className="product__others__product">
+								<picture className="product__others__product__image">
+									<source
+										media="screen and (min-width: 1100px)"
+										srcSet={element.image.desktop}
+									/>
+									<source
+										media="screen and (min-width: 768px)"
+										srcSet={element.image.tablet}
+									/>
+									<img src={element.image.mobile} alt={element.name} />
+								</picture>
+								<Text size="h5">{element.name}</Text>
+								<Button
+									onClick={() => history.push(`/products/${element.slug}`)}
+								>
+									SEE PRODUCT
+								</Button>
+							</div>
+						))}
+					</article>
 				</div>
+				<SectionLinks />
+				<FooterCompanyDescription />
 			</div>
 		</Styles>
 	);
