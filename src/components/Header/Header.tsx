@@ -8,9 +8,11 @@ import Headphone from '../../assets/shared/desktop/image-category-thumbnail-head
 import Earhphone from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
 import Speaker from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
 import { GhostButton, Text } from '../atoms';
+import { useHistory } from 'react-router';
 
 const Header: React.FC = () => {
 	const [menuOpened, setMenuOpened] = useState(false);
+	const history = useHistory();
 
 	const closeMenuWhenScrolls = () =>
 		window.scrollY > 500 && setMenuOpened(false);
@@ -31,7 +33,12 @@ const Header: React.FC = () => {
 					src={Hamburger}
 					alt=""
 				/>
-				<img className="header__logo" src={Logo} alt="audiophile" />
+				<img
+					className="header__logo"
+					src={Logo}
+					alt="audiophile"
+					onClick={() => history.push('/')}
+				/>
 				<section className="header__links">
 					<a href="/">Home</a>
 					<a href="/">HeadPhones</a>

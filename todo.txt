@@ -3,3 +3,4 @@ add the sectionLinks to the plegable header menu
 add story for tertiary button
 change section links name to category links
 hacer la página 404
+Cuando se haga un cambio de pagina con un history.push sube la pantalla hacia arriba

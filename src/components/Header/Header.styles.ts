@@ -16,6 +16,9 @@ const Styles = styled.header`
 		grid-template-columns: 70px 1fr 70px;
 		justify-items: center;
 		align-items: center;
+		&__logo {
+			cursor: pointer;
+		}
 		&__burger {
 			cursor: pointer;
 		}
