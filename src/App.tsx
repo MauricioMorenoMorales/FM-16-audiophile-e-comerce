@@ -1,19 +1,22 @@
 import { Header, Footer } from './components';
-import { Home, Category } from './pages';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Home, Category, Product } from './pages';
+import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
 	return (
 		<div>
-			<Router>
-				<Header />
+			<Header />
+			<Switch>
 				<Route exact path="/" component={Home} />
 				<Route
+					exact
 					path="/category/:categoryName(headphones|earphones|speakers)"
 					component={Category}
 				/>
-				<Footer />
-			</Router>
+				<Route exact path="/products/:productId([1-6])" component={Product} />
+				<Route path="*" component={Footer} />
+			</Switch>
+			<Footer />
 		</div>
 	);
 };

@@ -21,7 +21,7 @@ const Category: React.FC = () => {
 		<Styles>
 			<div className="category__header">
 				<Text size="h1" color="basePrimarySaturated">
-					{categoryName.toUpperCase()}
+					{categoryName && categoryName.toUpperCase()}
 				</Text>
 			</div>
 			<div className="body-container">

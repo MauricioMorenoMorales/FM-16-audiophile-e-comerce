@@ -27,6 +27,18 @@ const fontSize = {
 	p: '1.5rem',
 };
 
+const mobileFontSize = {
+	h1: '3.6rem',
+	h2: '4rem',
+	h3: '2.4rem',
+	h4: '2.8rem',
+	h5: '2.4rem',
+	h6: '1.8rem',
+	overline: '1.4rem',
+	subtitle: '1.3rem',
+	p: '1.5rem',
+};
+
 // 700 = bold, 400 = regular
 const fontWeight = {
 	h1: '700',
@@ -70,8 +82,7 @@ const Text = styled.p<textProps>`
 	color: ${props => colorSystem[props.color || 'baseSecondarySaturated']};
 	font-family: ${fontSystem.fontFamily};
 	@media screen and (max-width: 768px) {
-		font-size: ${props =>
-			props.size === 'h1' ? '3.6rem' : fontSize[props.size || 'p']};
+		font-size: ${props => mobileFontSize[props.size || 'p']};
 	}
 `;
 
