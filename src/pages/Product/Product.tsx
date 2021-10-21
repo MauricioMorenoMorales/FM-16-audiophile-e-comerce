@@ -52,20 +52,33 @@ const Product = () => {
 					</article>
 					<article className="product__description">
 						<section className="product__description__features">
-							<Text size="h3">FEATURES</Text>
-							<Text color="baseSecondaryDesaturated">
-								{product?.description}
+							<Text className="product__description__features__title" size="h3">
+								FEATURES
+							</Text>
+							<Text
+								className="product__description__features__paragraph"
+								color="baseSecondaryDesaturated"
+							>
+								{product?.features}
 							</Text>
 						</section>
 						<section className="product__description__box">
-							<Text size="h3">IN THE BOX</Text>
-							<div className="product__description__box__items"></div>
-							{product?.includes.map(element => (
-								<div className="product__description__box__items__item">
-									<Text color="accent">{element.quantity}x</Text>
-									<Text color="baseSecondaryDesaturated">{element.item}</Text>
-								</div>
-							))}
+							<Text className="product__description__box__title" size="h3">
+								IN THE BOX
+							</Text>
+							<div className="product__description__box__items">
+								{product?.includes.map(element => (
+									<div className="product__description__box__items__item">
+										<Text
+											className="product__description__box__items__item__quantity"
+											color="accent"
+										>
+											{element.quantity}x
+										</Text>
+										<Text color="baseSecondaryDesaturated">{element.item}</Text>
+									</div>
+								))}
+							</div>
 						</section>
 					</article>
 				</div>
