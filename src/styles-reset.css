@@ -13,6 +13,14 @@ html {
 	font-family: 'Manrope', sans-serif;
 	max-width: 100vw;
 }
+html::-webkit-scrollbar {
+	width: 8px;
+}
+html::-webkit-scrollbar-thumb {
+	color: #ddd;
+	background-color: rgba(177, 177, 177, 0.699);
+	border-radius: 5px;
+}
 * {
 	font-family: 'Manrope', sans-serif;
 }
