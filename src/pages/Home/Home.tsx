@@ -1,13 +1,11 @@
 import React from 'react';
 import Styles from './Home.styles';
+import { useHistory } from 'react-router';
 
 //Images
 import firstProductMobile from '../../assets/home/mobile/image-speaker-zx9.png';
 import firstProductTablet from '../../assets/home/tablet/image-speaker-zx9.png';
 import firstProductDesktop from '../../assets/home/desktop/image-speaker-zx9.png';
-// import secondProductMobile from '../../assets/home/mobile/image-speaker-zx7.jpg';
-// import secondProductTablet from '../../assets/home/tablet/image-speaker-zx7.jpg';
-// import secondProductDesktop from '../../assets/home/desktop/image-speaker-zx7.jpg';
 import thirdProductMobile from '../../assets/home/mobile/image-earphones-yx1.jpg';
 import thirdProductTablet from '../../assets/home/tablet/image-earphones-yx1.jpg';
 import thirdProductDesktop from '../../assets/home/desktop/image-earphones-yx1.jpg';
@@ -16,6 +14,7 @@ import { Hero, SectionLinks, FooterCompanyDescription } from '../../components';
 import { Text, Button } from '../../components/atoms';
 
 const Home = () => {
+	const history = useHistory();
 	return (
 		<Styles>
 			<Hero />
@@ -49,7 +48,12 @@ const Home = () => {
 								Upgrade to premium speakers that are phenomenally built to
 								deliver truly remarkable sound.
 							</Text>
-							<Button kind="tertiary">SEE PRODUCT</Button>
+							<Button
+								onClick={() => history.push('/products/zx9-speaker')}
+								kind="tertiary"
+							>
+								SEE PRODUCT
+							</Button>
 						</div>
 					</article>
 					<article className="home__products__second-item">
@@ -66,7 +70,12 @@ const Home = () => {
 						</picture> */}
 						<div className="home__products__second-item__text">
 							<Text size="h4">ZX7 SPEAKER</Text>
-							<Button kind="secondary">SEE PRODUCT</Button>
+							<Button
+								onClick={() => history.push('/products/zx7-speaker')}
+								kind="secondary"
+							>
+								SEE PRODUCT
+							</Button>
 						</div>
 					</article>
 					<article className="home__products__third-item--image">
@@ -84,7 +93,12 @@ const Home = () => {
 					</article>
 					<article className="home__products__third-item--description">
 						<Text size="h4">YX1 EARPHONES</Text>
-						<Button kind="secondary">SEE PRODUCT</Button>
+						<Button
+							onClick={() => history.push('/products/yx1-earphones')}
+							kind="secondary"
+						>
+							SEE PRODUCT
+						</Button>
 					</article>
 				</section>
 				<FooterCompanyDescription />

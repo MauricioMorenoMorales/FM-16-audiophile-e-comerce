@@ -65,6 +65,20 @@ const Styles = styled.div`
 				overflow: hidden;
 			}
 		}
+		&__others {
+			margin-top: 100px;
+			text-align: center;
+			&__product {
+				margin-top: 40px;
+				text-align: center;
+				& > * {
+					margin-top: 20px;
+				}
+				&__image > img {
+					border-radius: ${borderSystem.small};
+				}
+			}
+		}
 	}
 	@media screen and (min-width: 768px) {
 		.product {
@@ -114,6 +128,18 @@ const Styles = styled.div`
 					grid-area: third;
 				}
 			}
+			&__others {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: 30px 1fr;
+				gap: 12px;
+				grid-template-areas:
+					'title title title'
+					'first second third';
+				&__title {
+					grid-area: title;
+				}
+			}
 		}
 	}
 	@media screen and (min-width: 1100px) {
@@ -132,6 +158,9 @@ const Styles = styled.div`
 					margin-left: 100px;
 					margin-top: 20px;
 				}
+			}
+			&__others {
+				gap: 30px;
 			}
 		}
 	}

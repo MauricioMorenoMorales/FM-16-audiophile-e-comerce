@@ -5,8 +5,10 @@ import TabletBackground from '../../assets/home/tablet/image-header.jpg';
 import DesktopBackground from '../../assets/home/tablet/image-header.jpg';
 
 import { Text, Button } from '../atoms';
+import { useHistory } from 'react-router';
 
 const Hero = () => {
+	const history = useHistory();
 	return (
 		<Styles>
 			<div className="hero">
@@ -43,7 +45,12 @@ const Hero = () => {
 						Experience natural, lifelike audio and exceptional build quality
 						made for the passionate music enthusiast.
 					</Text>
-					<Button kind="primary">SEE PRODUCT</Button>
+					<Button
+						onClick={() => history.push('/products/xx99-mark-two-headphones')}
+						kind="primary"
+					>
+						SEE PRODUCT
+					</Button>
 				</section>
 			</div>
 		</Styles>

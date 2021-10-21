@@ -123,7 +123,9 @@ const Product = () => {
 						</picture>
 					</article>
 					<article className="product__others">
-						<Text size="h5">YOU MAY ALSO LIKE</Text>
+						<Text className="product__others__title" size="h5">
+							YOU MAY ALSO LIKE
+						</Text>
 						{product?.others.map((element, index) => (
 							<div className="product__others__product">
 								<picture className="product__others__product__image">
