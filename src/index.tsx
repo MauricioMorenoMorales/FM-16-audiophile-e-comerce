@@ -4,13 +4,17 @@ import App from './App';
 import './styles-reset.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './hooks/ScrollToTop';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Router>
-			<ScrollToTop />
-			<App />
-		</Router>
+		<Provider store={store}>
+			<Router>
+				<ScrollToTop />
+				<App />
+			</Router>
+		</Provider>
 	</React.StrictMode>,
 	document.getElementById('root'),
 );

@@ -4,6 +4,9 @@ import Logo from '../../assets/shared/desktop/logo.svg';
 import Cart from '../../assets/shared/desktop/icon-cart.svg';
 import Styles from './Header.styles';
 
+import { RootState } from '../../app/store';
+import { useSelector } from 'react-redux';
+
 import Headphone from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
 import Earhphone from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
 import Speaker from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
@@ -14,6 +17,7 @@ import { Link } from 'react-router-dom';
 const Header: React.FC = () => {
 	const [menuOpened, setMenuOpened] = useState(false);
 	const history = useHistory();
+	const cart = useSelector((state: RootState) => state.cart);
 
 	const closeMenuWhenScrolls = () =>
 		window.scrollY > 500 && setMenuOpened(false);
@@ -49,7 +53,9 @@ const Header: React.FC = () => {
 				<div className="header__cart">
 					<img className="header__cart__image" src={Cart} alt="cart" />
 					{/* TODO add a dynamic value to the counter */}
-					<div className="header__cart__counter">2</div>
+					{cart.length && (
+						<div className="header__cart__counter">{cart.length}</div>
+					)}
 				</div>
 			</section>
 			{menuOpened && (

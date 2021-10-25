@@ -3,6 +3,9 @@ import Styles from './Product.styles';
 import data from '../../data.json';
 import { useHistory, useParams } from 'react-router';
 
+import { useDispatch } from 'react-redux';
+import { add } from '../../features/cart/cartSlice';
+
 import { Text, Counter, Button } from '../../components/atoms';
 import { FooterCompanyDescription, SectionLinks } from '../../components';
 
@@ -19,6 +22,7 @@ const NewLine: React.FC<{ text: string | undefined }> = ({ text }) => (
 const Product = () => {
 	const { productSlug } = useParams<{ productSlug: string }>();
 	const history = useHistory();
+	const dispatch = useDispatch();
 	const product = data.find(
 		element => String(element.slug) === String(productSlug),
 	);
@@ -64,7 +68,21 @@ const Product = () => {
 							<Text size="h6">$ {product?.price}</Text>
 							<div className="product__hero__text__buttons">
 								<Counter />
-								<Button>ADD TO CART</Button>
+								<Button
+									onClick={() =>
+										dispatch(
+											add({
+												id: product!.id,
+												image: product!.categoryImage.mobile,
+												name: product!.name,
+												price: product!.price,
+												quantity: 1,
+											}),
+										)
+									}
+								>
+									ADD TO CART
+								</Button>
 							</div>
 						</section>
 					</article>
