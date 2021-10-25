@@ -152,7 +152,7 @@ const Styles = styled.div`
 			}
 			&__description {
 				display: grid;
-				grid-template-columns: 50% 50%;
+				grid-template-columns: 1fr 1fr;
 				&__box {
 					flex-direction: column;
 					margin-left: 100px;

@@ -6,6 +6,16 @@ import { useHistory, useParams } from 'react-router';
 import { Text, Counter, Button } from '../../components/atoms';
 import { FooterCompanyDescription, SectionLinks } from '../../components';
 
+const NewLine: React.FC<{ text: string | undefined }> = ({ text }) => (
+	<>
+		{text!.split('\n').map((text, index) => (
+			<Text key={index} color="baseSecondaryDesaturated">
+				{text}
+			</Text>
+		))}
+	</>
+);
+
 const Product = () => {
 	const { productSlug } = useParams<{ productSlug: string }>();
 	const history = useHistory();
@@ -17,7 +27,12 @@ const Product = () => {
 		<Styles>
 			<div className="body-container">
 				<div className="product">
-					<button className="product__go-back">Go Back</button>
+					<button
+						className="product__go-back"
+						onClick={() => history.push(`/category/${product?.category}`)}
+					>
+						Go Back
+					</button>
 					<article className="product__hero">
 						<picture className="product__hero__image">
 							<source
@@ -58,12 +73,7 @@ const Product = () => {
 							<Text className="product__description__features__title" size="h3">
 								FEATURES
 							</Text>
-							<Text
-								className="product__description__features__paragraph"
-								color="baseSecondaryDesaturated"
-							>
-								{product?.features}
-							</Text>
+							<NewLine text={product?.features} />
 						</section>
 						<section className="product__description__box">
 							<Text className="product__description__box__title" size="h3">
@@ -127,7 +137,7 @@ const Product = () => {
 							YOU MAY ALSO LIKE
 						</Text>
 						{product?.others.map((element, index) => (
-							<div className="product__others__product">
+							<div className="product__others__product" key={index}>
 								<picture className="product__others__product__image">
 									<source
 										media="screen and (min-width: 1100px)"

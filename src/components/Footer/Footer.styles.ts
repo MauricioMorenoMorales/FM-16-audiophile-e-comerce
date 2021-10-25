@@ -86,7 +86,7 @@ const Styles = styled.footer`
 		@media screen and (min-width: 1100px) {
 			.footer {
 				grid-template-areas: 'logo links' 'description social' 'copyright copyright';
-				max-width: 1100px;
+				max-width: 1300px;
 				margin: 0 auto;
 				&__links {
 					margin: 0;
