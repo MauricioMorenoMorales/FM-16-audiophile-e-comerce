@@ -64,10 +64,61 @@ const Styles = styled.header`
 			}
 		}
 	}
+	.header-cart {
+		position: absolute;
+		z-index: 100;
+		background-color: ${colorSystem.basePrimarySaturated};
+		right: 10px;
+		top: 100px;
+		border-radius: ${borderSystem.small};
+		width: 100%;
+		max-width: 310px;
+		padding: 10px;
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 30px;
+			&__remove-button {
+				background-color: transparent;
+				font-size: 1.5rem;
+				color: ${colorSystem.baseSecondaryDesaturated};
+				cursor: pointer;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		&__products {
+			margin-bottom: 30px;
+			&__item {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 10px;
+				&__description {
+					display: flex;
+					&__image {
+						width: 50px;
+						height: 50px;
+						border-radius: ${borderSystem.small};
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+		&__info {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 10px;
+		}
+		&__button {
+			margin-bottom: 10px;
+		}
+	}
 	.modal-background {
 		position: absolute;
 		width: 100%;
 		height: 2000px;
+		z-index: 15;
 		background-color: ${colorSystem.modalBackground};
 	}
 	@media (min-width: 768px) {

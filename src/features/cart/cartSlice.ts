@@ -7,13 +7,16 @@ export const counterSlice = createSlice({
 	name: 'cart',
 	initialState,
 	reducers: {
-		add: (state: any, action: PayloadAction<IProductInCart>) => {
+		add: (
+			state: Array<IProductInCart>,
+			action: PayloadAction<IProductInCart>,
+		) => {
 			const { id, name, image, price, quantity } = action.payload;
 			const itemIndex = state.findIndex(
-				(element: IProductInCart) => element.id === action.payload.id,
+				element => element.id === action.payload.id,
 			);
 			if (itemIndex === -1) {
-				state = state.push({
+				state.push({
 					id,
 					name,
 					image,
@@ -21,8 +24,17 @@ export const counterSlice = createSlice({
 					quantity,
 				});
 			} else {
+				state[itemIndex] = {
+					id,
+					name,
+					image,
+					price,
+					quantity,
+				};
 			}
 		},
+		remove: (state: Array<IProductInCart>, action: PayloadAction<number>) =>
+			state.filter(element => element.id !== action.payload),
 	},
 });
 

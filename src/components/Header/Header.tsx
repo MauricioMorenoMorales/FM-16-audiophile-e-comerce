@@ -10,17 +10,22 @@ import { useSelector } from 'react-redux';
 import Headphone from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
 import Earhphone from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
 import Speaker from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
-import { GhostButton, Text } from '../atoms';
+import { Button, Counter, GhostButton, Text } from '../atoms';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
 	const [menuOpened, setMenuOpened] = useState(false);
+	const [cartOpened, setCartOpened] = useState(false);
 	const history = useHistory();
 	const cart = useSelector((state: RootState) => state.cart);
 
-	const closeMenuWhenScrolls = () =>
-		window.scrollY > 500 && setMenuOpened(false);
+	const closeMenuWhenScrolls = () => {
+		if (window.scrollY > 500) {
+			setMenuOpened(false);
+			setCartOpened(false);
+		}
+	};
 
 	useEffect(() => {
 		document.addEventListener('scroll', closeMenuWhenScrolls);
@@ -50,7 +55,10 @@ const Header: React.FC = () => {
 					<Link to="/category/speakers">Speakers</Link>
 					<Link to="/category/earphones">EarPhones</Link>
 				</section>
-				<div className="header__cart">
+				<div
+					className="header__cart"
+					onClick={() => setCartOpened(!cartOpened)}
+				>
 					<img className="header__cart__image" src={Cart} alt="cart" />
 					{/* TODO add a dynamic value to the counter */}
 					{cart.length && (
@@ -89,10 +97,57 @@ const Header: React.FC = () => {
 					</div>
 				</section>
 			)}
-			{menuOpened && (
+			{cartOpened && cart.length > 0 && (
+				<article className="header-cart">
+					<section className="header-cart__header">
+						<Text size="h6">CART ({cart.length})</Text>
+						<button className="header-cart__header__remove-button">
+							Remove all
+						</button>
+					</section>
+					<section className="header-cart__products">
+						{cart.map(element => (
+							<div className="header-cart__products__item">
+								<div className="header-cart__products__item__description">
+									<img
+										className="header-cart__products__item__description__image"
+										src={element.image}
+										alt={element.name}
+									/>
+									<div className="header-cart__products__item__description__text">
+										<Text>
+											{element.name.replace(
+												/headphones|earphones|speaker/gi,
+												'',
+											)}
+										</Text>
+										<Text color="baseSecondaryDesaturated">
+											${element.price}
+										</Text>
+									</div>
+								</div>
+								<Counter />
+							</div>
+						))}
+					</section>
+					<section className="header-cart__info">
+						<Text color="baseSecondaryDesaturated">TOTAL</Text>
+						<Text>
+							${cart.reduce((acc, element) => element.price + acc, 0)}
+						</Text>
+					</section>
+					<Button fullWidth className="header-cart__button">
+						CHECKOUT
+					</Button>
+				</article>
+			)}
+			{(menuOpened || cartOpened) && (
 				<div
 					className="modal-background"
-					onClick={() => setMenuOpened(false)}
+					onClick={() => {
+						setMenuOpened(false);
+						setCartOpened(false);
+					}}
 				></div>
 			)}
 		</Styles>
