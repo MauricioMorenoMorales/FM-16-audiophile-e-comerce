@@ -39,7 +39,7 @@ const border = {
 const Button = styled.button<ButtonProps>`
 	width: ${({ fullWidth }) => fullWidth && '100%'};
 	display: ${({ fullWidth }) => (fullWidth ? 'flex' : 'inline-flex')};
-	background-color: ${props => background[props.kind || 'primary']};
+	background-color: ${({ kind }) => background[kind || 'primary']};
 	color: ${({ kind }) => textColor[kind || 'primary']};
 	border: 1px solid ${({ kind }) => border[kind || 'primary']};
 	height: ${heightSystem.big}px;

@@ -7,3 +7,4 @@ Cuando se haga un cambio de pagina con un history.push sube la pantalla hacia ar
 Arregla la seccion de la bocina que muestra un borde feo en el home
 Agrega funcionalidades a los links de los productos en el home
 Agrega funcionalidad a el menu mobile y tablet de las secciones en el header
+agrega fcuncionalidad de botones contadores y sus tamaños en versión pequeña

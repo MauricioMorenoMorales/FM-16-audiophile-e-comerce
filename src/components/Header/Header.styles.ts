@@ -9,6 +9,7 @@ import {
 const Styles = styled.header`
 	position: relative;
 	.header {
+		position: relative;
 		height: ${heightSystem.jumbo}px;
 		background-color: ${colorSystem.baseSecondary};
 		display: grid;
@@ -68,8 +69,8 @@ const Styles = styled.header`
 		position: absolute;
 		z-index: 100;
 		background-color: ${colorSystem.basePrimarySaturated};
-		right: 10px;
-		top: 100px;
+		right: 0;
+		top: 110px;
 		border-radius: ${borderSystem.small};
 		width: 100%;
 		max-width: 310px;
@@ -170,9 +171,6 @@ const Styles = styled.header`
 			}
 		}
 		.header-menu {
-			display: none;
-		}
-		.modal-background {
 			display: none;
 		}
 	}

@@ -1,5 +1,5 @@
 import { Header, Footer } from './components';
-import { Home, Category, Product } from './pages';
+import { Home, Category, Product, Checkout } from './pages';
 import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
@@ -14,6 +14,7 @@ const App = () => {
 					component={Category}
 				/>
 				<Route exact path="/products/:productSlug" component={Product} />
+				<Route exact path="/checkout" component={Checkout} />
 				<Route path="*" component={Footer} />
 			</Switch>
 			<Footer />

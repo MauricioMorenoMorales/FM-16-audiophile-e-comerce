@@ -8,6 +8,14 @@ export interface ComponentProps {
 	type?: 'text' | 'password' | 'email';
 }
 
+const typeOfInput = {
+	text: 'text',
+	password: 'password',
+	email: 'email',
+	phone: 'text',
+	zip: 'text',
+};
+
 const Input: React.FC<ComponentProps> = ({
 	title,
 	placeholder = '',
