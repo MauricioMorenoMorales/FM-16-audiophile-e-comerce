@@ -51,7 +51,7 @@ const Styles = styled.div`
 			background-image: url(${SpeakerBackgroundMobile});
 			margin-top: 24px;
 			border-radius: ${borderSystem.small};
-			background-size: auto 100%;
+			background-size: 100% 100%;
 			background-position: right;
 			background-repeat: no-repeat;
 			height: 320px;
@@ -103,6 +103,7 @@ const Styles = styled.div`
 			&__second-item {
 				grid-area: second;
 				background-image: url(${SpeakerBackgroundTablet});
+				background-size: 100% auto;
 				&__text {
 					margin-left: 60px;
 				}

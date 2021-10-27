@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styles from './Product.styles';
 import data from '../../data.json';
 import { useHistory, useParams } from 'react-router';
@@ -20,12 +20,16 @@ const NewLine: React.FC<{ text: string | undefined }> = ({ text }) => (
 );
 
 const Product = () => {
+	const [quantity, setQuantity] = useState<number>(1);
 	const { productSlug } = useParams<{ productSlug: string }>();
 	const history = useHistory();
 	const dispatch = useDispatch();
 	const product = data.find(
 		element => String(element.slug) === String(productSlug),
 	);
+	const changeQuantity = (count: number) => {
+		setQuantity(count);
+	};
 	if (!product) history.push('/');
 	return (
 		<Styles>
@@ -65,9 +69,9 @@ const Product = () => {
 							<Text color="baseSecondaryDesaturated">
 								{product?.description}
 							</Text>
-							<Text size="h6">$ {product?.price}</Text>
+							<Text size="h6">$ {product!.price * quantity}</Text>
 							<div className="product__hero__text__buttons">
-								<Counter />
+								<Counter stateFunction={changeQuantity} />
 								<Button
 									onClick={() =>
 										dispatch(
@@ -76,7 +80,7 @@ const Product = () => {
 												image: product!.categoryImage.mobile,
 												name: product!.name,
 												price: product!.price,
-												quantity: 1,
+												quantity: quantity,
 											}),
 										)
 									}

@@ -35,8 +35,9 @@ export const counterSlice = createSlice({
 		},
 		remove: (state: Array<IProductInCart>, action: PayloadAction<number>) =>
 			state.filter(element => element.id !== action.payload),
+		reset: state => initialState,
 	},
 });
 
-export const { add } = counterSlice.actions;
+export const { add, remove, reset } = counterSlice.actions;
 export default counterSlice.reducer;

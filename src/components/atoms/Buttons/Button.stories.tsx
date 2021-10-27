@@ -18,6 +18,10 @@ export const Secondary = Template.bind({});
 Secondary.args = {
 	kind: 'secondary',
 };
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+	kind: 'tertiary',
+};
 export const PrimaryFullWidth = Template.bind({});
 PrimaryFullWidth.args = {
 	kind: 'primary',

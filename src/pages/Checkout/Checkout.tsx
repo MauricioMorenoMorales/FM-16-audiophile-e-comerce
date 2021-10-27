@@ -4,9 +4,12 @@ import Styles from './Checkout.styles';
 
 import { RootState } from '../../app/store';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
 const Checkout: React.FC = () => {
 	const cart = useSelector((state: RootState) => state.cart);
+	const history = useHistory();
+	if (cart.length === 0) history.push('/');
 	return (
 		<Styles>
 			<div className="body-container">
@@ -84,7 +87,7 @@ const Checkout: React.FC = () => {
 												)}
 											</Text>
 											<Text color="baseSecondaryDesaturated">
-												${element.price}
+												${element.price * element.quantity}
 											</Text>
 										</div>
 									</div>
@@ -101,7 +104,11 @@ const Checkout: React.FC = () => {
 							<div className="checkout__summary__cart-data__item">
 								<Text color="baseSecondaryDesaturated">TOTAL</Text>
 								<Text>
-									${cart.reduce((acc, element) => acc + element.price, 0)}
+									$
+									{cart.reduce(
+										(acc, element) => acc + element.price * element.quantity,
+										0,
+									)}
 								</Text>
 							</div>
 							<div className="checkout__summary__cart-data__item">
@@ -113,7 +120,10 @@ const Checkout: React.FC = () => {
 								<Text>
 									$
 									{Math.floor(
-										cart.reduce((acc, element) => acc + element.price, 0) * 0.2,
+										cart.reduce(
+											(acc, element) => acc + element.price * element.quantity,
+											0,
+										) * 0.2,
 									)}
 								</Text>
 							</div>
@@ -122,7 +132,10 @@ const Checkout: React.FC = () => {
 								<Text color="accent">
 									$
 									{Math.floor(
-										cart.reduce((acc, element) => acc + element.price, 0) *
+										cart.reduce(
+											(acc, element) => acc + element.price * element.quantity,
+											0,
+										) *
 											1.2 +
 											50,
 									)}

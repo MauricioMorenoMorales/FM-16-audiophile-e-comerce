@@ -88,6 +88,9 @@ const Styles = styled.footer`
 				grid-template-areas: 'logo links' 'description social' 'copyright copyright';
 				max-width: 1300px;
 				margin: 0 auto;
+				&-line {
+					margin-left: calc(50% - 620px);
+				}
 				&__links {
 					margin: 0;
 					margin-left: auto;

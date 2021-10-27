@@ -4,8 +4,9 @@ import Logo from '../../assets/shared/desktop/logo.svg';
 import Cart from '../../assets/shared/desktop/icon-cart.svg';
 import Styles from './Header.styles';
 
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../app/store';
-import { useSelector } from 'react-redux';
+import { reset } from '../../features/cart/cartSlice';
 
 import Headphone from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
 import Earhphone from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
@@ -18,6 +19,7 @@ const Header: React.FC = () => {
 	const [menuOpened, setMenuOpened] = useState<boolean>(false);
 	const [cartOpened, setCartOpened] = useState<boolean>(false);
 	const history = useHistory();
+	const dispatch = useDispatch();
 	const cart = useSelector((state: RootState) => state.cart);
 
 	const closeMenuWhenScrolls = (): void => {
@@ -44,7 +46,10 @@ const Header: React.FC = () => {
 			<section className="header">
 				<img
 					className="header__burger"
-					onClick={() => setMenuOpened(!menuOpened)}
+					onClick={() => {
+						setMenuOpened(!menuOpened);
+						setCartOpened(false);
+					}}
 					src={Hamburger}
 					alt=""
 				/>
@@ -62,7 +67,11 @@ const Header: React.FC = () => {
 				</section>
 				<div
 					className="header__cart"
-					onClick={() => setCartOpened(!cartOpened)}
+					style={{ cursor: cart.length > 0 ? 'pointer' : 'default' }}
+					onClick={() => {
+						setCartOpened(!cartOpened);
+						setMenuOpened(false);
+					}}
 				>
 					<img className="header__cart__image" src={Cart} alt="cart" />
 					{/* TODO add a dynamic value to the counter */}
@@ -74,7 +83,13 @@ const Header: React.FC = () => {
 					<article className="header-cart">
 						<section className="header-cart__header">
 							<Text size="h6">CART ({cart.length})</Text>
-							<button className="header-cart__header__remove-button">
+							<button
+								className="header-cart__header__remove-button"
+								onClick={() => {
+									dispatch(reset());
+									setCartOpened(false);
+								}}
+							>
 								Remove all
 							</button>
 						</section>
@@ -95,7 +110,7 @@ const Header: React.FC = () => {
 												)}
 											</Text>
 											<Text color="baseSecondaryDesaturated">
-												${element.price}
+												${element.price * element.quantity}
 											</Text>
 										</div>
 									</div>
@@ -108,7 +123,11 @@ const Header: React.FC = () => {
 							<Text>
 								$
 								{Math.floor(
-									cart.reduce((acc, element) => element.price + acc, 0) * 1.2 +
+									cart.reduce(
+										(acc, element) => element.price * element.quantity + acc,
+										0,
+									) *
+										1.2 +
 										50,
 								)}
 							</Text>
@@ -163,7 +182,7 @@ const Header: React.FC = () => {
 					</div>
 				</section>
 			)}
-			{(menuOpened || cartOpened) && (
+			{(menuOpened || (cartOpened && cart.length > 0)) && (
 				<div
 					className="modal-background"
 					onClick={() => {

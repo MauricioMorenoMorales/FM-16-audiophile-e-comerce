@@ -28,7 +28,6 @@ const Styles = styled.header`
 		}
 		&__cart {
 			position: relative;
-			cursor: pointer;
 			&__counter {
 				position: absolute;
 				top: -5px;
