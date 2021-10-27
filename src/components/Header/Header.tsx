@@ -114,7 +114,7 @@ const Header: React.FC = () => {
 											</Text>
 										</div>
 									</div>
-									<Counter />
+									<Counter product={element} />
 								</div>
 							))}
 						</section>

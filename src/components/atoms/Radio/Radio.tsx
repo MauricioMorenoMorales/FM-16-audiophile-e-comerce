@@ -6,6 +6,7 @@ import Styles from './Radio.styles';
 export interface RadioProps {
 	active: boolean;
 	label: string;
+	onClick?: any;
 }
 
 // TODO
@@ -13,9 +14,13 @@ const Radio: React.FC<RadioProps> = ({ active, label }) => {
 	return (
 		<Styles className={`${active && 'active'}`}>
 			<div className="radio">
-				{active && <div className="inner-radio" data-testid="inner-radio"></div>}
+				{active && (
+					<div className="inner-radio" data-testid="inner-radio"></div>
+				)}
 			</div>
-			<Text size="subtitle" data-testid="label">{label}</Text>
+			<Text size="subtitle" data-testid="label">
+				{label}
+			</Text>
 		</Styles>
 	);
 };

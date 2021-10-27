@@ -119,7 +119,7 @@ const Styles = styled.div`
 						'title title'
 						'method first'
 						'method second'
-						'third fourth';
+						'third third';
 					& > * {
 						margin: 0;
 					}
@@ -129,6 +129,9 @@ const Styles = styled.div`
 					&__method {
 						grid-area: method;
 						font-weight: ${fontSystem.fontWeightBold};
+						&__description {
+							grid-area: third;
+						}
 					}
 				}
 			}

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Styles from './Product.styles';
 import data from '../../data.json';
-import { useHistory, useParams } from 'react-router';
+import { useHistory, useParams, useLocation } from 'react-router';
 
 import { useDispatch } from 'react-redux';
 import { add } from '../../features/cart/cartSlice';
@@ -24,12 +24,17 @@ const Product = () => {
 	const { productSlug } = useParams<{ productSlug: string }>();
 	const history = useHistory();
 	const dispatch = useDispatch();
+	const location = useLocation();
 	const product = data.find(
 		element => String(element.slug) === String(productSlug),
 	);
 	const changeQuantity = (count: number) => {
 		setQuantity(count);
 	};
+	// Resets the counter when another product is rendered
+	useEffect(() => {
+		setQuantity(1);
+	}, [location]);
 	if (!product) history.push('/');
 	return (
 		<Styles>
@@ -71,7 +76,9 @@ const Product = () => {
 							</Text>
 							<Text size="h6">$ {product!.price * quantity}</Text>
 							<div className="product__hero__text__buttons">
-								<Counter stateFunction={changeQuantity} />
+								<Counter
+									stateFunction={changeQuantity}
+								/>
 								<Button
 									onClick={() =>
 										dispatch(

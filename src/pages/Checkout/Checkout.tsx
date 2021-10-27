@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text, Input, Radio, Button } from '../../components/atoms';
+import React, { useState } from 'react';
+import { Text, Input, Radio, Button, Icons } from '../../components/atoms';
 import Styles from './Checkout.styles';
 
 import { RootState } from '../../app/store';
@@ -8,6 +8,9 @@ import { useHistory } from 'react-router';
 
 const Checkout: React.FC = () => {
 	const cart = useSelector((state: RootState) => state.cart);
+	const [paymentMethod, setPaymentMethod] = useState<'e-money' | 'cash'>(
+		'e-money',
+	);
 	const history = useHistory();
 	if (cart.length === 0) history.push('/');
 	return (
@@ -59,10 +62,31 @@ const Checkout: React.FC = () => {
 							<Text className="checkout__form__payment__method">
 								Payment method
 							</Text>
-							<Radio label="e-money" active />
-							<Radio label="Cash on Delivery" active={false} />
-							<Input title="e-Money Number" placeholder="238521993" />
-							<Input title="e-Money PIN" placeholder="6891" />
+							<div onClick={() => setPaymentMethod('e-money')}>
+								<Radio label="e-money" active={paymentMethod === 'e-money'} />
+							</div>
+							<div onClick={() => setPaymentMethod('cash')}>
+								<Radio
+									label="Cash on Delivery"
+									active={paymentMethod === 'cash'}
+								/>
+							</div>
+							{paymentMethod === 'e-money' ? (
+								<>
+									<Input title="e-Money Number" placeholder="238521993" />
+									<Input title="e-Money PIN" placeholder="6891" />
+								</>
+							) : (
+								<div className="checkout__form__payment__method__description">
+									<Icons iconName="payment" color="accent" />
+									<Text color="baseSecondaryDesaturated">
+										The ‘Cash on Delivery’ option enables you to pay in cash
+										when our delivery courier arrives at your residence. Just
+										make sure your address is correct so that your order will
+										not be cancelled.
+									</Text>
+								</div>
+							)}
 						</section>
 					</article>
 					<article className="checkout__summary">

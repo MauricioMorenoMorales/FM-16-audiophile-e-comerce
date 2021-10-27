@@ -1,26 +1,41 @@
 import React, { useState } from 'react';
 import Styles from './Counter.styles';
+import Product from '../../../interfaces/productInCart.interface';
 
+import { useDispatch } from 'react-redux';
+import { add } from '../../../features/cart/cartSlice';
+
+//! Read if there is an error on this component
 //If the component doesnt change the cart then it need to be passed an state function
 //If the component changes the cart then it requires the product to be passed
 const Counter: React.FC<{
-	changeCart?: boolean;
 	stateFunction?: (count: number) => void;
-}> = ({ changeCart = false, stateFunction }) => {
+	product?: Product;
+}> = ({ stateFunction, product }) => {
 	const [count, setCount] = useState<number>(1);
-	if (!changeCart && !stateFunction)
-		console.log('The counter component needs an state function to work');
-	if (changeCart) {
+	const dispatch = useDispatch();
+	if (product) {
 		return (
 			<Styles>
 				<button
-					onClick={() => count >= 2 && setCount(count - 1)}
+					onClick={() => {
+						if (product.quantity >= 2) {
+							const rest = product.quantity - 1;
+							dispatch(add({ ...product, quantity: rest }));
+						}
+					}}
 					data-testid="reduce"
 				>
 					-
 				</button>
-				<p data-testid="counter">{count}</p>
-				<button onClick={() => setCount(count + 1)} data-testid="add">
+				<p data-testid="counter">{product.quantity}</p>
+				<button
+					onClick={() => {
+						const sum = product.quantity + 1;
+						dispatch(add({ ...product, quantity: sum }));
+					}}
+					data-testid="add"
+				>
 					+
 				</button>
 			</Styles>
@@ -32,8 +47,7 @@ const Counter: React.FC<{
 					onClick={() => {
 						if (count >= 2) {
 							setCount(count - 1);
-							console.log(count);
-							stateFunction!(count - 1);
+							stateFunction && stateFunction(count - 1);
 						}
 					}}
 					data-testid="reduce"
@@ -43,10 +57,8 @@ const Counter: React.FC<{
 				<p data-testid="counter">{count}</p>
 				<button
 					onClick={() => {
-						console.log(count);
 						setCount(count + 1);
-						console.log(count);
-						stateFunction!(count + 1);
+						stateFunction && stateFunction(count + 1);
 					}}
 					data-testid="add"
 				>
