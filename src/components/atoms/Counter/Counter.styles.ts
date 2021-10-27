@@ -5,9 +5,9 @@ import {
 	heightSystem,
 } from '../../../global/designSystem';
 
-const Styles = styled.div`
-	width: 120px;
-	height: ${heightSystem.big}px;
+const Styles = styled.div<{ small?: boolean }>`
+	width: ${({ small }) => (small ? '90px' : '120px')};
+	height: ${({ small }) => (small ? heightSystem.normal : heightSystem.big)}px;
 	display: grid;
 	grid-template-columns: 33% 34% 33%;
 	background-color: ${colorSystem.basePrimaryDesaturated};

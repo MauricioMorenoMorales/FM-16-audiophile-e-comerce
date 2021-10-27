@@ -1,4 +1,3 @@
 change section links name to category links
 hacer la página 404
 agrega fcuncionalidad de botones contadores y sus tamaños en versión pequeña
-renderiza la información necesaria dependiendo si es E-money o Cash delivery

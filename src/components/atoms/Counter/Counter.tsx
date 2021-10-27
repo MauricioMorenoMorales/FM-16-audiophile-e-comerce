@@ -11,12 +11,13 @@ import { add } from '../../../features/cart/cartSlice';
 const Counter: React.FC<{
 	stateFunction?: (count: number) => void;
 	product?: Product;
-}> = ({ stateFunction, product }) => {
+	small?: boolean;
+}> = ({ stateFunction, product, small }) => {
 	const [count, setCount] = useState<number>(1);
 	const dispatch = useDispatch();
 	if (product) {
 		return (
-			<Styles>
+			<Styles small={small}>
 				<button
 					onClick={() => {
 						if (product.quantity >= 2) {

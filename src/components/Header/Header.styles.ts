@@ -93,6 +93,7 @@ const Styles = styled.header`
 			&__item {
 				display: flex;
 				justify-content: space-between;
+				align-items: center;
 				margin-bottom: 10px;
 				&__description {
 					display: flex;
