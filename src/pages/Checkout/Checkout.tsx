@@ -170,43 +170,64 @@ const Checkout: React.FC = () => {
 						<Button fullWidth>CONTINUE & PAY</Button>
 					</article>
 				</div>
-				{modalOpened && <div className="purchase-modal--background"></div>}
-				{modalOpened && (
-					<div className="purchase-modal">
-						<Icons color="accent" iconName="checked" />
-						<Text size="h3">THANK YOU FOR YOUR ORDER</Text>
-						<Text color="baseSecondaryDesaturated">
-							You will receive an email confirmation shortly
-						</Text>
-						<section className="purchase-modal__products">
-							<div className="purchase-modal__products__cart">
-								<div className="purchase-modal__products__cart__item">
-									<div className="purchase-modal__products__cart__item__description">
-										<img src={cart[0]!.image} alt={cart[0]!.name} />
-										<div className="purchase-modal__products__cart__item__description__text">
-											<Text>{cart[0]!.name}</Text>
-											<Text color="baseSecondaryDesaturated">
-												${cart[0]!.price}
-											</Text>
-										</div>
-									</div>
-									<Text className="purchase-modal__products__cart__item__quantity">
-										x{cart[0]!.quantity}
-									</Text>
-								</div>
-								<div className="purchase-modal__products">
-									<Text color="baseSecondaryDesaturated">GRAND TOTAL</Text>
-									<Text color="basePrimarySaturated">
-										$
-										{cart.reduce((acc, curr) => acc + curr.price, 0) * 1.2 + 50}
-									</Text>
-								</div>
-							</div>
-						</section>
-						<Button fullWidth>BACK TO HOME</Button>
-					</div>
-				)}
 			</div>
+			{modalOpened && <div className="purchase-modal--background"></div>}
+			{modalOpened && (
+				<div className="purchase-modal">
+					<Icons color="accent" iconName="checked" />
+					<Text className="purchase-modal__title" size="h3">
+						THANK YOU FOR YOUR ORDER
+					</Text>
+					<Text color="baseSecondaryDesaturated">
+						You will receive an email confirmation shortly
+					</Text>
+					<section className="purchase-modal__products">
+						<div className="purchase-modal__products__cart">
+							<div className="purchase-modal__products__cart__item">
+								<div className="purchase-modal__products__cart__item__description">
+									<img src={cart[0]!.image} alt={cart[0]!.name} />
+									<div className="purchase-modal__products__cart__item__description__text">
+										<Text className="purchase-modal__products__cart__item__description__text__title">
+											{cart[0]!.name.replace(
+												/headphones|earphones|speaker/gi,
+												'',
+											)}
+										</Text>
+										<Text color="baseSecondaryDesaturated">
+											${cart[0]!.price}
+										</Text>
+									</div>
+								</div>
+								<Text
+									className="purchase-modal__products__cart__item__quantity"
+									color="baseSecondaryDesaturated"
+								>
+									x{cart[0]!.quantity}
+								</Text>
+							</div>
+							{cart.length >= 2 && (
+								<Text
+									className="purchase-modal__products__cart__total-items"
+									size="subtitle"
+									color="baseSecondaryDesaturated"
+								>
+									and other {cart.length - 1} item(s)
+								</Text>
+							)}
+						</div>
+						<div className="purchase-modal__products__total">
+							<Text color="baseSecondaryDesaturated">GRAND TOTAL</Text>
+							<Text color="basePrimarySaturated" size="h6">
+								$
+								{Math.floor(
+									cart.reduce((acc, curr) => acc + curr.price, 0) * 1.2 + 50,
+								)}
+							</Text>
+						</div>
+					</section>
+					<Button fullWidth>BACK TO HOME</Button>
+				</div>
+			)}
 		</Styles>
 	);
 };
