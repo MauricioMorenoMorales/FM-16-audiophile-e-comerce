@@ -46,7 +46,7 @@ const Styles = styled.header`
 	.header-menu {
 		padding: 24px;
 		position: absolute;
-		z-index: 100;
+		z-index: 104;
 		background-color: ${colorSystem.basePrimarySaturated};
 		border-radius: 0 0 ${borderSystem.small} ${borderSystem.small};
 		width: 100%;
@@ -66,7 +66,7 @@ const Styles = styled.header`
 	}
 	.header-cart {
 		position: absolute;
-		z-index: 100;
+		z-index: 104;
 		background-color: ${colorSystem.basePrimarySaturated};
 		right: 0;
 		top: 110px;
@@ -119,7 +119,7 @@ const Styles = styled.header`
 		position: absolute;
 		width: 100%;
 		height: 2000px;
-		z-index: 15;
+		z-index: 103;
 		background-color: ${colorSystem.modalBackground};
 	}
 	@media (min-width: 768px) {

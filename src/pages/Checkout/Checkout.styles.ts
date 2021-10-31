@@ -78,7 +78,7 @@ const Styles = styled.div`
 	}
 	.purchase-modal {
 		position: absolute;
-		z-index: 1001;
+		z-index: 102;
 		top: 100px;
 		background-color: ${colorSystem.basePrimarySaturated};
 		max-width: 330px;
@@ -96,7 +96,7 @@ const Styles = styled.div`
 		}
 		&--background {
 			position: absolute;
-			z-index: 100;
+			z-index: 101;
 			top: 0;
 			left: 0;
 			right: 0;

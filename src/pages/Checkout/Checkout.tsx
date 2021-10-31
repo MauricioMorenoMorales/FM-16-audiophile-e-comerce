@@ -11,7 +11,7 @@ const Checkout: React.FC = () => {
 	const [paymentMethod, setPaymentMethod] = useState<'e-money' | 'cash'>(
 		'e-money',
 	);
-	const [modalOpened, setModalOpened] = useState<boolean>(true);
+	const [modalOpened, setModalOpened] = useState<boolean>(false);
 	const history = useHistory();
 	if (cart.length === 0) history.push('/');
 	useEffect(() => {}, []);

@@ -4,4 +4,3 @@ agrega fcuncionalidad de botones contadores y sus tamaños en versión pequeña
 agregar funcionalidad la cual verifique que todos los inputs contengan algun valor
 crea un componente para calcular el total
 crea un componente para los productos dentro del carro
-cuando hagan click afuera del menu del checkout debe de cerrarse
