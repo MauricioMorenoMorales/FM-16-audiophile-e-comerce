@@ -106,8 +106,12 @@ const Styles = styled.div`
 		&__products {
 			background-color: ${colorSystem.basePrimaryDesaturated};
 			border-radius: ${borderSystem.small};
+			overflow: hidden;
 			&__cart {
 				padding: 10px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 				&__item {
 					display: flex;
 					align-items: center;
@@ -139,7 +143,6 @@ const Styles = styled.div`
 			}
 			&__total {
 				background-color: ${colorSystem.baseSecondary};
-				border-radius: 0 0 ${borderSystem.small} ${borderSystem.small};
 				padding: 20px;
 				& > * {
 					margin-bottom: 10px;
@@ -205,6 +208,20 @@ const Styles = styled.div`
 							grid-area: third;
 						}
 					}
+				}
+			}
+		}
+		.purchase-modal {
+			max-width: 540px;
+			&__products {
+				display: grid;
+				grid-template-columns: 60% 40%;
+				overflow: hidden;
+				&__total {
+					border: 0;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
 				}
 			}
 		}

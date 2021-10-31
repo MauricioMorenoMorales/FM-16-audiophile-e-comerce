@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, Input, Radio, Button, Icons } from '../../components/atoms';
 import Styles from './Checkout.styles';
 
@@ -14,6 +14,7 @@ const Checkout: React.FC = () => {
 	const [modalOpened, setModalOpened] = useState<boolean>(true);
 	const history = useHistory();
 	if (cart.length === 0) history.push('/');
+	useEffect(() => {}, []);
 	return (
 		<Styles>
 			<div className="body-container">
@@ -167,11 +168,24 @@ const Checkout: React.FC = () => {
 								</Text>
 							</div>
 						</section>
-						<Button fullWidth>CONTINUE & PAY</Button>
+						<Button
+							fullWidth
+							onClick={() => {
+								setModalOpened(true);
+								window.scrollTo(0, 0);
+							}}
+						>
+							CONTINUE & PAY
+						</Button>
 					</article>
 				</div>
 			</div>
-			{modalOpened && <div className="purchase-modal--background"></div>}
+			{modalOpened && (
+				<div
+					className="purchase-modal--background"
+					onClick={() => setModalOpened(false)}
+				></div>
+			)}
 			{modalOpened && (
 				<div className="purchase-modal">
 					<Icons color="accent" iconName="checked" />
@@ -225,7 +239,9 @@ const Checkout: React.FC = () => {
 							</Text>
 						</div>
 					</section>
-					<Button fullWidth>BACK TO HOME</Button>
+					<Button onClick={() => history.push('/')} fullWidth>
+						BACK TO HOME
+					</Button>
 				</div>
 			)}
 		</Styles>
