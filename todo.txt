@@ -4,3 +4,5 @@ agrega fcuncionalidad de botones contadores y sus tamaños en versión pequeña
 agregar funcionalidad la cual verifique que todos los inputs contengan algun valor
 crea un componente para calcular el total
 crea un componente para los productos dentro del carro
+Elimina el renderizado de un footer cuando la app no encuentre la página o de 404
+Hacer que el renderizado de imagenes funcione tanto para el entorno de produccion como el local
