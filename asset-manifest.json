@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/FM-16-audiophile-e-comerce/static/css/main.5fe072c3.chunk.css",
-    "main.js": "/FM-16-audiophile-e-comerce/static/js/main.cac80659.chunk.js",
-    "main.js.map": "/FM-16-audiophile-e-comerce/static/js/main.cac80659.chunk.js.map",
+    "main.js": "/FM-16-audiophile-e-comerce/static/js/main.1f62204d.chunk.js",
+    "main.js.map": "/FM-16-audiophile-e-comerce/static/js/main.1f62204d.chunk.js.map",
     "runtime-main.js": "/FM-16-audiophile-e-comerce/static/js/runtime-main.ffd9e9de.js",
     "runtime-main.js.map": "/FM-16-audiophile-e-comerce/static/js/runtime-main.ffd9e9de.js.map",
     "static/js/2.66c50c96.chunk.js": "/FM-16-audiophile-e-comerce/static/js/2.66c50c96.chunk.js",
@@ -36,6 +36,6 @@
     "static/js/runtime-main.ffd9e9de.js",
     "static/js/2.66c50c96.chunk.js",
     "static/css/main.5fe072c3.chunk.css",
-    "static/js/main.cac80659.chunk.js"
+    "static/js/main.1f62204d.chunk.js"
   ]
 }
