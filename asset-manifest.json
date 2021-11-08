@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FM-16-audiophile-e-comerce/static/css/main.5fe072c3.chunk.css",
-    "main.js": "/FM-16-audiophile-e-comerce/static/js/main.a4baac7a.chunk.js",
-    "main.js.map": "/FM-16-audiophile-e-comerce/static/js/main.a4baac7a.chunk.js.map",
+    "main.js": "/FM-16-audiophile-e-comerce/static/js/main.cac80659.chunk.js",
+    "main.js.map": "/FM-16-audiophile-e-comerce/static/js/main.cac80659.chunk.js.map",
     "runtime-main.js": "/FM-16-audiophile-e-comerce/static/js/runtime-main.ffd9e9de.js",
     "runtime-main.js.map": "/FM-16-audiophile-e-comerce/static/js/runtime-main.ffd9e9de.js.map",
-    "static/js/2.12fcae3c.chunk.js": "/FM-16-audiophile-e-comerce/static/js/2.12fcae3c.chunk.js",
-    "static/js/2.12fcae3c.chunk.js.map": "/FM-16-audiophile-e-comerce/static/js/2.12fcae3c.chunk.js.map",
+    "static/js/2.66c50c96.chunk.js": "/FM-16-audiophile-e-comerce/static/js/2.66c50c96.chunk.js",
+    "static/js/2.66c50c96.chunk.js.map": "/FM-16-audiophile-e-comerce/static/js/2.66c50c96.chunk.js.map",
     "index.html": "/FM-16-audiophile-e-comerce/index.html",
     "static/css/main.5fe072c3.chunk.css.map": "/FM-16-audiophile-e-comerce/static/css/main.5fe072c3.chunk.css.map",
-    "static/js/2.12fcae3c.chunk.js.LICENSE.txt": "/FM-16-audiophile-e-comerce/static/js/2.12fcae3c.chunk.js.LICENSE.txt",
+    "static/js/2.66c50c96.chunk.js.LICENSE.txt": "/FM-16-audiophile-e-comerce/static/js/2.66c50c96.chunk.js.LICENSE.txt",
     "static/media/button-arrow.fcd29284.svg": "/FM-16-audiophile-e-comerce/static/media/button-arrow.fcd29284.svg",
     "static/media/icon-cart.5e1893a6.svg": "/FM-16-audiophile-e-comerce/static/media/icon-cart.5e1893a6.svg",
     "static/media/icon-hamburger.f8a9f0cf.svg": "/FM-16-audiophile-e-comerce/static/media/icon-hamburger.f8a9f0cf.svg",
@@ -34,8 +34,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ffd9e9de.js",
-    "static/js/2.12fcae3c.chunk.js",
+    "static/js/2.66c50c96.chunk.js",
     "static/css/main.5fe072c3.chunk.css",
-    "static/js/main.a4baac7a.chunk.js"
+    "static/js/main.cac80659.chunk.js"
   ]
 }
